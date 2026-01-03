@@ -1,0 +1,142 @@
+.sos-button-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.sos-button {
+    background-color: #e53935;
+    color: white;
+    padding: 16px 32px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: background 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.sos-button:hover {
+    background-color: #b71c1c;
+}
+.sos-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.sos-button.alerting {
+    background-color: orange;
+}
+
+.sos-dropdown {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    margin-bottom: 12px;
+    min-width: 180px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    animation: fadeIn 0.2s;
+}
+.sos-dropdown-item {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #e53935;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.sos-dropdown-item:hover {
+    background: #ffeaea;
+}
+
+.sos-popup {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.20);
+    padding: 28px 24px 16px 24px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    animation: fadeIn 0.2s;
+    margin-bottom: 8px;
+}
+.sos-popup-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #e53935;
+}
+.sos-popup-label {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.sos-popup-input,
+.sos-popup-select,
+.sos-popup-textarea {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    outline: none;
+}
+.sos-popup-input:focus,
+.sos-popup-select:focus,
+.sos-popup-textarea:focus {
+    border-color: #e53935;
+}
+.sos-popup-textarea {
+    min-height: 48px;
+    resize: vertical;
+}
+.sos-popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+.sos-popup-cancel {
+    background: #f5f5f5;
+    color: #444;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.sos-popup-cancel:hover {
+    background: #eee;
+}
+.sos-popup-send {
+    background: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.sos-popup-send:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.sos-popup-send:hover:not(:disabled) {
+    background: #b71c1c;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

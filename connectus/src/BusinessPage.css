@@ -1,0 +1,152 @@
+.business-page {
+  background: linear-gradient(135deg, #fdf6fd 0%, #e0f7fa 45%, #ffe6e6 100%);
+  min-height: 100vh;
+  padding: 2.5rem 0 0 0;
+}
+
+.business-page h1 {
+  text-align: center;
+  color: #6a7fd7;
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.business-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: linear-gradient(135deg, #fbc2eb 0%, #fceabb 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(171, 207, 255, 0.09);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 32px rgba(171, 207, 255, 0.13);
+}
+
+.product-card h3 {
+  color: #6a7fd7;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.product-card .price {
+  color: #6a7fd7;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.product-card .description {
+  color: #555;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+.seller-info {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.seller-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.add-product-form {
+  background: linear-gradient(135deg, #fceabb 0%, #e0c3fc 100%);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(171, 207, 255, 0.09);
+  position: sticky;
+  top: 2rem;
+}
+
+.add-product-form h2 {
+  color: #6a7fd7;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #7c6ad7;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0c3fc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #4a4a4a;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6a7fd7;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(106,127,215,0.10);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #a1c4fd 0%, #fbc2eb 100%);
+  color: #6a7fd7;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(171, 207, 255, 0.10);
+}
+
+.submit-button:hover {
+  background: linear-gradient(90deg, #fbc2eb 0%, #a1c4fd 100%);
+  color: #22223b;
+  box-shadow: 0 4px 16px rgba(171, 207, 255, 0.16);
+}
+
+@media (max-width: 768px) {
+  .business-content {
+    grid-template-columns: 1fr;
+  }
+  .add-product-form {
+    position: static;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .business-page {
+    padding: 1rem;
+  }
+}

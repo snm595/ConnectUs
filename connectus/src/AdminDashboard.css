@@ -1,0 +1,84 @@
+.dashboard-container {
+  min-width: 340px;
+  max-width: 420px;
+  margin: 4rem auto 0 auto;
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 8px 48px 0 rgba(58, 98, 255, 0.15), 0 1.5px 8px 0 rgba(0,0,0,0.04);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(58,98,255,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+.dashboard-container:hover {
+  box-shadow: 0 12px 64px 0 rgba(58, 98, 255, 0.20), 0 2px 12px 0 rgba(0,0,0,0.08);
+}
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6f00ff 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(111,0,255,0.10);
+}
+.dashboard-btn {
+  width: 90%;
+  margin: 0.75rem 0;
+  padding: 1.15rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #ff512f 0%, #dd2476 100%);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(221,36,118,0.12);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.18s, box-shadow 0.25s;
+  outline: none;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, #00d2ff 0%, #6f00ff 100%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  z-index: 0;
+}
+.dashboard-btn:hover {
+  background: linear-gradient(90deg, #00d2ff 0%, #6f00ff 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,210,255,0.16);
+}
+.dashboard-btn:active {
+  transform: scale(0.98);
+}
+.dashboard-btn:focus {
+  outline: 2px solid #6f00ff;
+}
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 1.5rem 0.5rem;
+    border-radius: 18px;
+    min-width: unset;
+    max-width: 97vw;
+  }
+  .dashboard-title {
+    font-size: 2rem;
+  }
+  .dashboard-btn {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+}
