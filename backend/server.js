@@ -12,19 +12,21 @@ const messageRoutes = require('./routes/message');
 
 const app = express();
 
-/* ✅ CORS – works for local + deployed frontend */
+/* ✅ FINAL CORS CONFIG */
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://connectus-frontend.onrender.com' // change when frontend is deployed
+    'https://nimble-sprinkles-1f4b55.netlify.app'
   ],
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
 }));
+
+app.options('*', cors());
 
 app.use(express.json());
 
-/* ✅ Health / root route */
 app.get('/', (req, res) => {
   res.send('ConnectUs Backend is running 🚀');
 });
@@ -33,7 +35,6 @@ app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK' });
 });
 
-/* ✅ API Routes */
 app.use('/api/auth', authRoutes);
 app.use('/api/community', communityRoutes);
 app.use('/api/business', businessRoutes);
@@ -43,7 +44,6 @@ app.use('/api/message', messageRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-/* ✅ MongoDB connection */
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
